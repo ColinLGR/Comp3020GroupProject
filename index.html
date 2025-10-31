@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
+        <link href="./styles.css" rel="stylesheet">
     </head>
     <body>
         <nav>
-
+            <h1>Textbook Finder</h1>
+            <span class="user-info">Signed in as: John Smith</span>
         </nav>
         <main>
+            <!-- These images will be placeholders -->
             <section class="images">
-
+                <div class="previews">
+                    <img class="image-preview"
+                        src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
+                        alt="Intro To Calculus">
+                    <img class="image-preview"
+                        src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781476740195/the-library-book-9781476740195_lg.jpg"
+                        alt="Intro To Calculus">
+                    <img class="image-preview"
+                        src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
+                        alt="Intro To Calculus">
+                </div>
+                <img
+                    src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
+                    alt="Intro to Calculus" id="main-photo">
             </section>
             <section class="info">
+                <h2 id="title">Calculus For Beginners</h2>
+                <h3 id="author">By Charles Charley</h3>
+                <span id="price">$10.10</span>
+                <span id="seller-name">Seller: John Johnson</span>
+                <p id="description">Description: Slightly used, but no major
+                    trauma</p>
+            </section>
+            <!-- Will get to later -->
+            <section class="study-buddies">
 
             </section>
-            <section class="study-buddies">
-                
-            </section>
         </main>
+        <script src="./listings.js"></script>
     </body>
 </html>
