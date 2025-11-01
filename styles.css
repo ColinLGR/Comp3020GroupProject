@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 nav {
   display: flex;
   align-items: center;
@@ -13,22 +14,43 @@ nav {
 
 main {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 50% 50%;
+    /* height: 100%; */
 }
 
 .images {
     display: flex;
     justify-content: center;
-    padding: 15px;
+    /* padding: 15px; */
+    justify-content: flex-start ;
 }
 
 .image-preview {
     width:150px;
-    height:150px;
+    height:190px;
+}
+
+.previews {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-photo {
+    width: 400px;
 }
 
 .info {
     display: flex;
     flex-direction: column;
+    height: 100%;
+}
+
+.info * {
+    
+    border: 1px solid red;
+}
+
+#title {
+
 }
 
