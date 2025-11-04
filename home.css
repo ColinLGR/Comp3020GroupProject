@@ -1,68 +1,103 @@
-
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Gabriola';
+  margin: 0px;
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
+  display: flex;
+  background-color: skyblue;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  height: 6rem;
 }
 
 .container {
   display: flex;
-  min-height: 1rem;
-}
-
-.right {
-  flex: 0.5;
-  background-color: #ddd;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-.right select, 
-.right button {
-  width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-  border-radius: 4px;
-  border: 1px solid #aaa;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.right button:hover {
-  background-color: #bbb;
-}
-
-#map {
-  margin-top: 20px;
-  background-color: #bbb;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
+  height: calc(100vh - 6rem);
+  flex-direction: row;
 }
 
 .left {
-  flex: 2;
-  padding: 20px;
-  background-color: #f4f4f4;
-  box-sizing: border-box;
-}
-
-#searchBox {
-  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
-  border: solid #aaa;
-  border-radius: 4px;
-  box-sizing: border-box;
+  background-color: lightgray;
 }
 
-#Filters {
-    text-align: center;
+.right {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  padding: 1rem;
+  position: relative;
+}
+
+#sidebarButton {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left select,
+.left button {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  border: 0.2rem solid #aaa;
+  cursor: pointer;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.left select:hover,
+.left button:hover {
+  background-color: skyblue;
+}
+
+#map {
+  display: flex;
+  height: 30rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  overflow: hidden;
+}
+
+.right input{
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.2rem solid #aaa;
+  box-sizing: border-box;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+}
+
+#post {
+  position: absolute;
+  background-color: white;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  width: 4rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 2px solid #888;
+  color: black;
+  box-shadow: 0.1rem 0.1rem 0.5rem black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#post:hover {
+  background-color: skyblue;
 }

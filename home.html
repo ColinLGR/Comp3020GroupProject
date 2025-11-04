@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="./home.css">
     <head>
-    <title>Textbook Kijiji</title>
+    <title>TEXTBOOK KIJIJI</title>
+    <link rel="stylesheet" href="./home.css">
     </head>
     <body>
     <header>
-        <h1>Textbook Kijiji</h1>
+        <h1>TEXTBOOK KIJIJI</h1>
     </header>
 
     <div class="container">
-        <div class="right">
-            <select name="Filters" id="Filters">
-                <option value="" disabled selected hidden>Choose a filter</option>
-                <option value="">No options yet</option>
-            </select>
-                
-            <button id="BookmarkButton">☰ Bookmarks</button>
+        <div class="left">
+            <div id="sidebarButton">
+                <select id="Filters">
+                    <option value="" disabled selected hidden>Choose a filter</option>
+                    <option value="">No options yet</option>
+                </select>
+
+                <button id="BookmarkButton">☰ Bookmarks</button>
+            </div>
             
             <div id="map">
                 map
             </div>
         </div>
 
-        <div class="left">
-        <input type="text" id="searchBox" placeholder="Search...">
-        <div>
-            searched items
-        </div>
+        <div class="right">
+            <input type="text" id="searchBox" placeholder="Search...">
+            <div id="searchedItem">
+                searched items
+            </div>
+            <button id="post">
+                POST
+            </button>
         </div>
     </div>
     </body>
