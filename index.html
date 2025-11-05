@@ -7,7 +7,11 @@
     <body>
         <nav>
             <h1>Textbook Finder</h1>
-            <span class="user-info">Signed in as: John Smith</span>
+            <div id="user-info">
+                <span>Signed in as: </span> 
+                <span id="user-name">John Smith</span>
+            
+            </div>
         </nav>
         <main>
             <!-- These images will be placeholders -->
@@ -28,12 +32,22 @@
                     alt="Intro to Calculus" id="main-photo">
             </section>
             <section class="info">
-                <h2 id="title">Calculus For Beginners</h2>
-                <h3 id="author">By Charles Charley</h3>
-                <span id="price">$10.10</span>
-                <span id="seller-name">Seller: John Johnson</span>
-                <p id="description">Description: Slightly used, but no major
-                    trauma</p>
+                <div class="book-info">
+                    <h2 id="title">Calculus For Beginners</h2>
+                    <h3 id="author">By Charles Charley</h3>
+                </div>
+
+                <div class="seller-info">
+                    <p id="price">$10.10</p>
+                    <p id="seller-name">Seller: John Johnson</p>
+                    <p>Description</p>
+                    <hr>
+                    <p id="description">Slightly used, but no major
+                        trauma. Wear and tear but all the text pages and
+                        illustrations or maps are present. It may lack
+                        endpapers, half-title, and even the title page. All
+                        defects must be noted.</p>
+                </div>
             </section>
             <!-- Will get to later -->
             <section class="study-buddies">
