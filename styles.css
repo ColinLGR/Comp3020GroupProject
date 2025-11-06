@@ -99,3 +99,10 @@ hr {
     margin: 10px 0;
 }
 
+study { /*It's not coloured like the other labels so I assume something is wrong here but it seems to work? */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /*border-bottom: 1px solid red; */ /* Shows up below the whole study buddy section rather than below 'Other people interested in this book:' */
+  margin: 0 0 10px 10px;
+}
