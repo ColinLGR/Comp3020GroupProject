@@ -29,7 +29,7 @@ header {
 
 .right {
   display: flex;
-  flex: 2;
+  flex: 3;
   flex-direction: column;
   padding: 1rem;
   position: relative;
@@ -52,14 +52,17 @@ header {
   background-color: white;
   width: 100%;
   text-align: center;
+  transition: transform 0.2s ease;
 }
 
 .left select:hover,
 .left button:hover {
   background-color: skyblue;
+  transform: scale(1.05);
 }
 
 #map {
+  position: relative;
   display: flex;
   height: 30rem;
   align-items: center;
@@ -67,6 +70,11 @@ header {
   border-radius: 1rem;
   background-color: aliceblue;
   overflow: hidden;
+}
+
+#map img {
+  position: absolute;
+  border-radius: 0.5rem;
 }
 
 .right input{
@@ -96,8 +104,10 @@ header {
   box-shadow: 0.1rem 0.1rem 0.5rem black;
   font-weight: bold;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #post:hover {
   background-color: skyblue;
+  transform: scale(1.2);
 }
