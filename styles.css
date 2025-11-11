@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid red;/ */
+    box-sizing: border-box;
     font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
@@ -23,47 +23,50 @@ nav {
 
 main {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
     /* height: 100%; */
 }
 
 .images {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     /* padding: 15px; */
     /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* border: 1px solid red; */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.image-preview {
-    width:100%;
-    height:190px;
-}
+
 
 .previews {
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
-    padding-top: 15px;
     gap: 10px;
+    align-items: center;
 }
 
-.previews img {
-    border: 3px solid transparent;
-    transition: scale 2s ease-in;
+.image-preview {
+    width:120px;
+    height:180px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease;;
 }
 
-.previews img:hover {
-    border: 3px solid red;
-    transform: scale(1.1);
+.image-preview:hover {
+    border: 5px solid #89a6bb;
+    transform: scale(1.05);
 }
 
 #main-photo {
-    width: 400px;
-    margin-left: auto;
-    padding-right: 40px;
-    margin-right: 50px;
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .info {
@@ -73,6 +76,9 @@ main {
     height: 50%;
     font-size: 2rem;
 
+}
+.book-info {
+    margin-bottom: 10px;
 }
 
 #author {
@@ -89,7 +95,9 @@ main {
 }
 
 #description {
-    width: 70%;
+    /* width: 70%; */
+    min-width: 50%;
+    max-width: 70%;
 }
 
 hr {
@@ -99,3 +107,17 @@ hr {
     margin: 10px 0;
 }
 
+/* Tested in Chrome Dev Tools and this is when the grid layout falls apart */
+@media (max-width: 1050px) {
+  main {
+    grid-template-columns: 1fr; 
+  }
+
+  .main-photo {
+    grid-column: 1; 
+  }
+
+  .previews {
+    grid-column: 1; 
+  }
+}
