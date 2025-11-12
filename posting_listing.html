@@ -23,6 +23,37 @@
         <form action="/upload-image" method="POST" enctype="multipart/form-data">
             <label for="imageUpload">Upload Image:</label>
             <input type="file" id="imageUpload" name="image" accept="image/*">
-            <input type="button" value="Submit Image"> <!--type="submit" sends to server-->
+            <input type="button" value="Add another image"> <!--type="submit" sends to server-->
         </form>
+
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title">
+
+        <label for="price">Price: </label>
+        <input type="number" id="price" name="price">
+
+        <label for="description">Item Description:</label>
+        <textarea id="description" name="description" rows="5" cols="40" placeholder="Type your description here..."></textarea>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4989.004591453563!
+        2d-97.14272422357702!3d49.80542957147627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+        1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e1!3m2!1sen!2sca!
+        4v1762982569121!5m2!1sen!2sca" 
+        width="400" height="300" style="border:0;" 
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <label for="address">Pick-up Address: </label>
+        <input type="text" id="address" name="address">
+
+        <input type="checkbox" id="showAddressCheck" name="showAddress" value="showAddress">
+        <label for="showAddressCheck">Show exact address?</label>
+        <p>If not selected, will default to show radius of 5 km.</p>
+
+        <input type="checkbox" id="studybuddyCheck" name="studybuddyCheck" value="studybuddyCheck">
+        <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label>
+
+        <input type="button" value="Cancel" id="cancel" name="cancel">
+        <input type="button" value="Save as draft" id="save" name="save">
+        <input type="submit" value="Post" id="post" name="post">
+
 </html>
