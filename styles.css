@@ -54,12 +54,13 @@ main {
     object-fit: cover;
     cursor: pointer;
     border: 5px solid transparent;
-    transition: transform 0.3s ease, border 0.3s ease;;
+    transition: transform 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
 }
 
 .image-preview:hover {
-    border: 5px solid #89a6bb;
+    border: 5px solid #62b9f7;
     transform: scale(1.05);
+    border-radius: 20px;
 }
 
 #main-photo {
@@ -102,7 +103,7 @@ main {
 
 hr {
     border-color: #0E1111;
-    width: 50%;
+    width: 70%;
     opacity: 0.6;
     margin: 10px 0;
 }
