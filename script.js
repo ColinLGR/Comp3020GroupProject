@@ -5,7 +5,26 @@ const search = document.getElementById("searchBox");
 const filter = document.getElementById("Filters");
 const searchList = document.getElementById("searchedItem");
 
-
+const database = [[null,"name","$10.00","seller","description"],
+                    [null,"name1","$20.00","seller","description"],
+                    [null,"name2","$30.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name3","$40.00","seller","description"],
+                    [null,"name4","$50.00","seller","description"]];
 
 filterList.forEach((b) => {
     const choosenFilters = document.getElementById("choosenFilters");
@@ -18,12 +37,14 @@ filterList.forEach((b) => {
     opt.style.borderRadius = "1rem";
     opt.style.border = "0.15rem solid #aaa";
     opt.style.cursor = "pointer";
+    opt.style.boxShadow = "var(--shadow)";
 
     opt.addEventListener("click", () => {
         if(choosenFilters.contains(opt)) {
             filterWindow.appendChild(opt);
         } else {
             choosenFilters.appendChild(opt);
+            opt.style.boxShadow = "";
         }
         if(choosenFilters.childElementCount === 0) {
             choosenFilters.style.marginBottom = "0rem";
@@ -33,12 +54,6 @@ filterList.forEach((b) => {
     });
 
     filterWindow.appendChild(opt);
-});
-
-search.addEventListener("keydown", (event) => {
-    if(event.key == "Enter") {
-        console.log(search.value);
-    }
 });
 
 bookmark.addEventListener("click", () => {
@@ -66,6 +81,7 @@ bookmark.addEventListener("click", () => {
         btn.style.borderRadius = "1rem";
         btn.style.border = "0.15rem solid #aaa";
         btn.style.cursor = "pointer";
+        // btn.style.boxShadow = "var(--shadow)";
 
         btn.addEventListener("click", () => {
             console.log("Clicked bookmark:", b);
@@ -73,7 +89,7 @@ bookmark.addEventListener("click", () => {
 
         bookmarkWindow.appendChild(btn);
     });
-})
+});
 
 filter.addEventListener("click", () => {
     const filterWindow = document.getElementById("filterWindow");
@@ -88,4 +104,38 @@ filter.addEventListener("click", () => {
     } else {
         filterWindow.style.display = "flex";
     }
-})
+});
+
+search.addEventListener("keydown", (event) => {
+    if(event.key == "Enter") {
+        // let query = search.value.trim();
+        // let index = database.findIndex(item => item[1] === query);
+
+        // searchList.innerHTML = ""; // clear old results
+
+        // if (index === -1) {
+        //     searchList.textContent = "No item found.";
+        //     return;
+        // }
+
+        // let item = database[index];
+        for(let i = 0; i < 20; i++)
+            searchedData(database[i]);
+    }
+});
+
+function searchedData(item) {
+    const box = document.createElement("div");
+    box.className = "itemBox";
+
+    box.innerHTML = `
+        <div class="itemImage">${item[0] ? `<img src="${item[0]}">` : "(no image)"}</div>
+        <div class="itemInfo">
+            <h2>${item[1]}</h2>
+            <p><strong>Price:</strong> ${item[2]}</p>
+            <p><strong>Seller:</strong> ${item[3]}</p>
+            <p><strong>Description:</strong> ${item[4]}</p>
+        </div>
+    `;
+    searchList.appendChild(box);
+}
