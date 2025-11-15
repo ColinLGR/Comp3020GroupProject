@@ -12,17 +12,25 @@
     <div class="container">
         <div class="left">
             <div id="sidebarButton">
-                <select id="Filters">
-                    <option value="" disabled selected hidden>Choose a filter</option>
-                    <option value="">No options yet</option>
-                </select>
+                <div id="choosenFilters"></div>
+                <button id="Filters">Choose a filter</button>
+                <div id="filterWindow"></div>
+
 
                 <button id="BookmarkButton">☰ Bookmarks</button>
+                <div id="bookmarkWindow"></div>
             </div>
             
             <div id="map">
-                map
+                <div id="mapHeader">
+                    <p>Nearby Sellers</p>
+                </div>
+
                 <img src="map.png" alt="map">
+
+                <div id="mapLocation">
+                    <p>Seller Location</p>
+                </div>
             </div>
         </div>
 
@@ -37,4 +45,5 @@
         </div>
     </div>
     </body>
+    <script src="script.js"></script>
 </html>

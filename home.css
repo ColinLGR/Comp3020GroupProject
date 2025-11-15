@@ -25,6 +25,7 @@ header {
   justify-content: space-between;
   padding: 1rem;
   background-color: lightgray;
+  overflow-y: auto;
 }
 
 .right {
@@ -37,12 +38,11 @@ header {
 
 #sidebarButton {
   display: flex;
-  height: 100%;
   flex-direction: column;
   align-items: center;
 }
 
-.left select,
+#Filters,
 .left button {
   padding: 1rem;
   margin-bottom: 1rem;
@@ -55,7 +55,7 @@ header {
   transition: transform 0.2s ease;
 }
 
-.left select:hover,
+#Filters:hover,
 .left button:hover {
   background-color: skyblue;
   transform: scale(1.05);
@@ -64,8 +64,7 @@ header {
 #map {
   position: relative;
   display: flex;
-  height: 30rem;
-  align-items: center;
+  min-height: 25rem;
   justify-content: center;
   border-radius: 1rem;
   background-color: aliceblue;
@@ -75,6 +74,42 @@ header {
 #map img {
   position: absolute;
   border-radius: 0.5rem;
+  z-index: 0;
+}
+
+#mapHeader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-bottom: 0.2rem solid #ccc;
+  z-index: 1;
+  text-align: center;
+  line-height: 0.5rem;
+  font-size: 1.5rem;
+}
+
+#mapLocation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 0.2rem solid #ccc;
+  z-index: 1;
+  text-align: center;
+  line-height: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.left::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.left::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
 }
 
 .right input{
@@ -111,3 +146,62 @@ header {
   background-color: skyblue;
   transform: scale(1.2);
 }
+
+#bookmarkWindow {
+  display: none;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  border: 0.2rem solid #888;
+  width: 100%;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+#bookmarkWindow::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#bookmarkWindow::-webkit-scrollbar-track {
+  margin: 0.5rem;
+}
+
+#bookmarkWindow::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
+}
+
+#filterWindow {
+  display: none;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: aliceblue;
+  border: 0.2rem solid #888;
+  width: 100%;
+  max-height: 20rem;
+  overflow-y: auto;
+}
+
+#filterWindow::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+#filterWindow::-webkit-scrollbar-track {
+  margin: 0.5rem;
+}
+
+#filterWindow::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
+}
+
