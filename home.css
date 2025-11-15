@@ -54,7 +54,6 @@ header {
   text-align: center;
   transition: transform 0.2s ease;
 }
-
 #Filters:hover,
 .left button:hover {
   background-color: skyblue;
@@ -70,13 +69,11 @@ header {
   background-color: aliceblue;
   overflow: hidden;
 }
-
 #map img {
   position: absolute;
   border-radius: 0.5rem;
   z-index: 0;
 }
-
 #mapHeader {
   position: absolute;
   top: 0;
@@ -89,7 +86,6 @@ header {
   line-height: 0.5rem;
   font-size: 1.5rem;
 }
-
 #mapLocation {
   position: absolute;
   bottom: 0;
@@ -106,7 +102,6 @@ header {
 .left::-webkit-scrollbar {
   width: 0.5rem;
 }
-
 .left::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 1rem;
@@ -141,7 +136,6 @@ header {
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 #post:hover {
   background-color: skyblue;
   transform: scale(1.2);
@@ -162,15 +156,12 @@ header {
   max-height: 20rem;
   overflow-y: auto;
 }
-
 #bookmarkWindow::-webkit-scrollbar {
   width: 0.5rem;
 }
-
 #bookmarkWindow::-webkit-scrollbar-track {
   margin: 0.5rem;
 }
-
 #bookmarkWindow::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 1rem;
@@ -191,17 +182,30 @@ header {
   max-height: 20rem;
   overflow-y: auto;
 }
-
 #filterWindow::-webkit-scrollbar {
   width: 0.5rem;
 }
-
 #filterWindow::-webkit-scrollbar-track {
   margin: 0.5rem;
 }
-
 #filterWindow::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: 1rem;
 }
 
+#choosenFilters {
+  display: flex;
+  gap: 0.2rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+#choosenFilters::-webkit-scrollbar {
+  height: 0.5rem;
+}
+#choosenFilters::-webkit-scrollbar-track {
+  margin: 0rem;
+}
+#choosenFilters::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 1rem;
+}
