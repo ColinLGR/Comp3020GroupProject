@@ -82,6 +82,7 @@ header {
   min-height: 25rem;
   justify-content: center;
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   overflow: hidden;
 }
 #map img {
@@ -147,7 +148,8 @@ header {
   align-items: center;
   box-sizing: border-box;
   padding: var(--padding);
-  border-radius: var(--shadow);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
   background-color: aliceblue;
   border: 0.2rem solid #888;
   width: 100%;
@@ -173,6 +175,7 @@ header {
   align-items: center;
   box-sizing: border-box;
   padding: var(--padding);
+  box-shadow: var(--shadow);
   border-radius: var(--border-radius);
   background-color: aliceblue;
   border: 0.2rem solid #888;
@@ -233,9 +236,8 @@ header {
 
 .itemBox {
   display: flex;
-  flex: 1 1 1rem;
   width: 15rem;
-  max-width: 100%;
+  flex: 1 1 15rem;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
@@ -246,13 +248,15 @@ header {
   box-shadow: var(--shadow);
   margin-bottom: 1rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
 }
 .itemBox:hover {
   background-color: var(--hover-color);
-  transform: scale(1.02);
-  box-shadow: 0.2rem 0.3rem 0.7rem rgba(0,0,0,0.3);
+  transform: scale(1.08);
+  box-shadow: var(--shadow);
 }
 .itemImage {
+  flex: 0 0 7rem;
   width: 7rem;
   height: 7rem;
   border-radius: 1rem;
@@ -272,12 +276,21 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .itemInfo h2 {
   margin: 0;
   font-size: 1.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .itemInfo p {
   margin: 0.2rem 0;
   font-size: 1.1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
