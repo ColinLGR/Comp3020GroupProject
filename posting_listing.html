@@ -2,11 +2,12 @@
 
 <html>
     <head>
-        <title>Textbook Finder</title>
+        <title>UofM Textbook Marketplace</title>
     </head>
 
     <body>
-        <h1>Post a Book Listing</h1>
+        <h1>UofM Textbook Marketplace</h1>
+        <h2>Post a Book Listing</h2>
         <!-- <ul>
             {% for posting in postings %}
                 <li>
@@ -20,40 +21,109 @@
             
         </ul>-->
 
-        <form action="/upload-image" method="POST" enctype="multipart/form-data">
+        <!-- <form action="/upload-image" method="POST" enctype="multipart/form-data">
             <label for="imageUpload">Upload Image:</label>
-            <input type="file" id="imageUpload" name="image" accept="image/*">
-            <input type="button" value="Add another image"> <!--type="submit" sends to server-->
-        </form>
-
+            <input type="file" id="imageUpload1" name="image1" accept="image/*" onchange="previewImage(event)">
+            <input type="button" value="Add another image"> <!- type="submit" sends to server-->
+        <!-- </form><br> -->
+        <!-- const maxImgs = 10; -->
+        <!-- var imgCounter = 0; -->
+        <label for="imageUpload1">Upload Image:</label>
+        <input type="file" id="imageUpload1" name="images[]" accept="image/*" multiple onchange="previewImage(event)">
+        <!-- <input type="button" id="addImage" value="Add another image" onclick="addImage()"> -->
+        <input type="button" id="removeImage" value="Remove image" onclick="removeImage(event)">
+        <img id="imgPreview1"/>
+        <script>
+            const previewImage = (event) => {
+                const theimage = document.getElementById("imgPreview1")
+                theimage.style.display = ""
+                const files = event.target.files;
+                if(files.length > 0) {
+                    // for (file in files)
+                    // {
+                        var imageUrl = URL.createObjectURL(files[0])
+                        var imageEl = document.getElementById("imgPreview1")
+                        imageEl.src = imageUrl
+                    // }
+                }
+            }
+        </script><br>
+        <script>
+            const removeImage = (event) => {
+                const remove1 = document.getElementById('imageUpload1')
+                const remove2 = document.getElementById("imgPreview1")
+                remove1.value = '';
+                remove2.style.display = 'none';
+            }
+        </script>
+        <!-- <script>
+            function addImage()
+            {
+                if (imgCounter < maxImgs)
+                {
+                    imgCounter++;
+                    const fullId = "imageUpload"+String(imgCounter)
+                    const fullName = "image"+String(imageCounter)
+                    const fullPrevId = "imgPreview"+String(imageCounter)
+                    return(
+                        <div>
+                        <label for=fullId>Upload Image:</label>
+                        <input type="file" id=fullId name=fullName accept="image/*" onchange="previewImage(event)">
+                        <img id=fullPrevId/>
+                        </div>
+                    )
+                }
+            }
+        </script> -->
         <label for="title">Title: </label>
         <input type="text" id="title" name="title">
 
         <label for="price">Price: </label>
         <input type="number" id="price" name="price">
 
+
         <label for="description">Item Description:</label>
         <textarea id="description" name="description" rows="5" cols="40" placeholder="Type your description here..."></textarea>
+        <br>
+
+        <form>
+            <p>Select the tags for this textbook:</p>
+            <label for="COMP3020">
+                <input type="checkbox" id="COMP3020" name="tags[]" value="COMP3020">COMP3020<br>
+            </label>
+            <label for="MATH1500">
+                <input type="checkbox" id="MATH1500" name="tags[]" value="MATH1500">MATH1500<br>
+            </label>
+            <label for="MATH1710">
+                <input type="checkbox" id="MATH1710" name="tags[]" value="MATH1710">MATH1710<br>
+            </label>
+            <label for="COMP3380">
+                <input type="checkbox" id="COMP3380" name="tags[]" value="COMP3380">COMP3020<br>
+            </label>
+        </form><br>
 
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4989.004591453563!
         2d-97.14272422357702!3d49.80542957147627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
         1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e1!3m2!1sen!2sca!
         4v1762982569121!5m2!1sen!2sca" 
-        width="400" height="300" style="border:0;" 
+        width="200" height="200" style="border:0;" 
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
         <label for="address">Pick-up Address: </label>
         <input type="text" id="address" name="address">
 
         <input type="checkbox" id="showAddressCheck" name="showAddress" value="showAddress">
-        <label for="showAddressCheck">Show exact address?</label>
-        <p>If not selected, will default to show radius of 5 km.</p>
+        <label for="showAddressCheck">Show exact address? If not selected, will default to show radius of 5 km.</label>
+        <br>
 
         <input type="checkbox" id="studybuddyCheck" name="studybuddyCheck" value="studybuddyCheck">
-        <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label>
+        <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label><br>
 
-        <input type="button" value="Cancel" id="cancel" name="cancel">
-        <input type="button" value="Save as draft" id="save" name="save">
-        <input type="submit" value="Post" id="post" name="post">
+        <form method="POST">
+            <input type="button" value="Cancel" id="cancel" name="cancel">
+            <input type="button" value="Save as draft" id="save" name="save">
+            <input type="submit" value="Post" id="post" name="post">
+        </form>
+
 
 </html>
