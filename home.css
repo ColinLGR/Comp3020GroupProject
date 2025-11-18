@@ -7,7 +7,7 @@
 
 
 body {
-  font-family: 'Gabriola';
+  font-family: 'Consolas';
   margin: 0px;
 }
 
@@ -59,6 +59,8 @@ header {
 
 #Filters,
 .left button {
+  font-size: inherit;
+  font-family: inherit;
   padding: var(--padding);
   margin-bottom: 1rem;
   border-radius: var(--border-radius);
@@ -81,6 +83,7 @@ header {
   display: flex;
   min-height: 25rem;
   justify-content: center;
+  border: 0.2rem solid #aaa;
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -197,7 +200,7 @@ header {
 #choosenFilters {
   display: flex;
   gap: 0.2rem;
-  max-width: 100%;
+  width: 100%;
   overflow-x: auto;
 }
 #choosenFilters::-webkit-scrollbar {
@@ -209,6 +212,16 @@ header {
 #choosenFilters::-webkit-scrollbar-thumb {
   background-color: #888;
   border-radius: var(--border-radius);
+}
+#choosenFilters button {
+  width: 100%;
+  padding: 1rem;
+  white-space: nowrap;
+  box-sizing: border-box;
+  box-shadow: var(--shadow);
+  margin: 0.2rem 0;
+  border-radius: var(--border-radius);
+  border: 0.15rem solid #aaa;
 }
 
 
@@ -222,37 +235,38 @@ header {
   background-color: white;
   text-align: center;
   margin-bottom: 1rem;
+  font-size: inherit;
+  font-family: inherit;
 }
 
 #searchedItem {
   display: flex;
   flex-wrap: wrap;
   padding: 1rem;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-content: flex-start;
   gap: 1rem;
   overflow-y: auto;
 }
 
 .itemBox {
   display: flex;
-  width: 15rem;
-  flex: 1 1 15rem;
   flex-direction: row;
   align-items: center;
+  flex: 1 1 15rem;
+  max-width: 25rem;
   gap: 1rem;
   background: white;
   border-radius: 1rem;
   border: 0.15rem solid #aaa;
   padding: 1rem;
   box-shadow: var(--shadow);
-  margin-bottom: 1rem;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
 .itemBox:hover {
   background-color: var(--hover-color);
-  transform: scale(1.08);
+  transform: scale(1.04);
   box-shadow: var(--shadow);
 }
 .itemImage {
