@@ -82,6 +82,7 @@ header {
   position: relative;
   display: flex;
   min-height: 25rem;
+  height: 100%;
   justify-content: center;
   border: 0.2rem solid #aaa;
   border-radius: var(--border-radius);
@@ -91,6 +92,7 @@ header {
 #map img {
   position: absolute;
   border-radius: 0.5rem;
+  object-fit: contain;
   z-index: 0;
 }
 #mapHeader {
@@ -98,10 +100,14 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  display: flex;
+  height: 3rem;
+  width: 100%;
   background: white;
   border-bottom: 0.2rem solid #ccc;
   z-index: 1;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   line-height: 0.5rem;
   font-size: 1.5rem;
 }
@@ -110,14 +116,42 @@ header {
   bottom: 0;
   left: 0;
   right: 0;
+  display: flex;
+  min-height: 3rem;
+  width: 100%;
   background: white;
   border-top: 0.2rem solid #ccc;
   z-index: 1;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
   line-height: 0.5rem;
   font-size: 1.5rem;
 }
-
+.map-marker, .item-marker {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border: 2px solid white;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease;
+}
+.map-marker:hover {
+  transform: scale(1.3);
+}
+.user-marker {
+  background-color: blue;
+}
+.item-marker {
+  background-color: red;
+}
 
 #post {
   position: absolute;
@@ -295,14 +329,13 @@ header {
 }
 .itemInfo h2 {
   margin: 0;
-  font-size: 1.6rem;
+  font-weight: normal;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .itemInfo p {
   margin: 0.2rem 0;
-  font-size: 1.1rem;
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
