@@ -40,8 +40,8 @@
                 <div class="seller-info">
                     <p id="price">$10.10</p>
                     <p id="seller-name">Seller: John Johnson</p>
-                    <p>Description</p>
                     <hr>
+                    <p><strong>Description:</strong></p>
                     <p id="description">Slightly used, but no major
                         trauma. Wear and tear but all the text pages and
                         illustrations or maps are present. It may lack
@@ -49,32 +49,41 @@
                         defects must be noted.</p>
                 </div>
             </section>
-            <!-- Tried to do some work on, might want to move the section up and to the right to be below the description section -->
-            <study>
+            <section class="study">
                 <section class="study-buddies">
                     <h3 id="study-title">Looking for Study Buddies?</h3>
                     <span id="study-subtitle">People also interested in this book:</span>
 
                         <div class="profile-list">
-                            <!-- Image and text not centered? Should be in a grid maybe? -->
-                            <!-- Also there's no button to fake contact the person and some of this should be moved into styles maybe?-->
                             <img class="buddy-profile"
                                 src="https://i.guim.co.uk/img/media/327aa3f0c3b8e40ab03b4ae80319064e401c6fbc/377_133_3542_2834/master/3542.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=34d32522f47e4a67286f9894fc81c863"
-                                width = "50px"
-                                height = "50px"
                                 alt="Jim Jimothy">
-                                <span id="buddy-profile-name">Jim Jimothy</span>
+                                <span class="buddy-profile-name">Jim Jimothy</span>
+
+                                <button class = "contact-button">Contact</button>
+                                <div class = "contact-popup">
+                                    <h3 id = "buddy-email-title">Buddy Email:</h3>
+                                    <p id = "buddy-email">Jimothyj2@myumanitoba.ca</p>
+                                    <button class = "close-buddy-popup">Close</button>
+                                </div>
                             <img class="buddy-profile"
                                 src="https://dv9b2v6p3dpu5.cloudfront.net/transforms/pets/2035924/3459ef27-d78d-4ad8-8662-973c612c9506_6c0c164bd2b597ee32b68b8b5755bd2e.jpg"
-                                width = "50px"
-                                height = "50px"
+
                                 alt="Bob Bobby">
-                                <span id="buddy-profile-name">Bob Bobby</span>
+                                <span class="buddy-profile-name">Bob Bobby</span>
+
+                                <button class = "contact-button">Contact</button>
+                                <div class = "contact-popup">
+                                    <h3 id = "buddy-email-title">Buddy Email:</h3>
+                                    <p id = "buddy-email">Bobbyb4@myumanitoba.ca</p>
+                                    <button class = "close-buddy-popup">Close</button>
+                                </div>
                         </div>
                 </section>
-            </study>
+            </section>
+
+            </section>
         </main>
         <script src="./listings.js"></script>
     </body>
-
 </html>
