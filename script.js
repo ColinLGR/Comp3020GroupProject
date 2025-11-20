@@ -67,7 +67,7 @@ database.forEach(item => {
     itemMarker.textContent = item[1][0];
     itemMarker.style.left = (Math.random() * 50) + 25 + "%";
     itemMarker.style.top = (Math.random() * 50) + 25 + "%";
-    itemMarker.title = `${item[1]}\nPrice: $${item[3]}\nSeller: ${item[4]}`;
+    itemMarker.title = `Seller: ${item[4]}\nAddress: ${item[6]}`;
     itemMarker.addEventListener("click", () => {
         document.getElementById("mapHeader").textContent = item[4];
         document.getElementById("mapLocation").textContent = item[6];
@@ -75,7 +75,6 @@ database.forEach(item => {
     map.appendChild(itemMarker);
     item.push(itemMarker);
 });
-
 
 filterList.forEach((b) => {
     const choosenFilters = document.getElementById("choosenFilters");
