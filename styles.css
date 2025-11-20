@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    /* border: 1px solid red;/ */
+    box-sizing: border-box;
     font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
@@ -23,47 +23,51 @@ nav {
 
 main {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
     /* height: 100%; */
 }
 
 .images {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     /* padding: 15px; */
     /* justify-content: flex-start; */
-    /* width: 100%; */
-    /* border: 1px solid red; */
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-.image-preview {
-    width:100%;
-    height:190px;
-}
+
 
 .previews {
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
-    padding-top: 15px;
     gap: 10px;
+    align-items: center;
 }
 
-.previews img {
-    border: 3px solid transparent;
-    transition: scale 2s ease-in;
+.image-preview {
+    width:120px;
+    height:180px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: transform 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
 }
 
-.previews img:hover {
-    border: 3px solid red;
-    transform: scale(1.1);
+.image-preview:hover {
+    border: 5px solid #62b9f7;
+    transform: scale(1.05);
+    border-radius: 20px;
 }
 
 #main-photo {
-    width: 400px;
-    margin-left: auto;
-    padding-right: 40px;
-    margin-right: 50px;
+    width: 350px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .info {
@@ -73,6 +77,9 @@ main {
     height: 50%;
     font-size: 2rem;
 
+}
+.book-info {
+    margin-bottom: 10px;
 }
 
 #author {
@@ -89,20 +96,73 @@ main {
 }
 
 #description {
-    width: 70%;
+    /* width: 70%; */
+    min-width: 50%;
+    max-width: 70%;
 }
 
 hr {
     border-color: #0E1111;
-    width: 50%;
+    width: 70%;
     opacity: 0.6;
     margin: 10px 0;
 }
 
-study { /*It's not coloured like the other labels so I assume something is wrong here but it seems to work? */
+/* Tested in Chrome Dev Tools and this is when the grid layout falls apart */
+@media (max-width: 1050px) {
+  main {
+    grid-template-columns: 1fr; 
+  }
+
+  .main-photo {
+    grid-column: 1; 
+  }
+
+  .previews {
+    grid-column: 1; 
+  }
+}
+
+.study {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /*border-bottom: 1px solid red; */ /* Shows up below the whole study buddy section rather than below 'Other people interested in this book:' */
-  margin: 0 0 10px 10px;
+  border: 3px solid #62b9f7;
+  margin: 0 0 5px 0 ;
+  grid-column-start: 2;
+}
+
+#study-title {
+    margin: 0 0 0 5px;
+    
+}
+
+#study-subtitle{
+    margin: 0 0 0 5px;
+    
+}
+
+.buddy-profile {
+    margin: 5px 5px 5px 5px;
+    height: 50px;
+    width: 50px;
+}
+
+.buddy-profile-name {
+    position: relative;
+    top: -25px;
+}
+
+.contact-button {
+    position: relative;
+    top: -25px;
+    margin: 0 50px 0 10px;
+}
+
+.contact-popup {
+    background: white;
+    position: absolute;
+    border: 3px solid #62b9f7;
+    margin: -200px 0 0 -3px;
+    display: none;
 }
