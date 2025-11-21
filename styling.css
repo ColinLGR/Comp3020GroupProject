@@ -1,13 +1,35 @@
-#imageUpload::file-selector-button {
-  /* Positioning properties */
-  position: absolute; /* or relative, fixed, sticky */
-  top: 50px;
-  left: 100px;
-  /* Other styling */
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.book-details {
+    display: flex;
+    margin: 24px 0px;
+    gap: 20px; /* Optional: Adds space between columns */
+}
+
+.book-images {
+    flex: 30%; /* Makes columns share available space equally */
+    /* Or, for fixed widths: */
+    /* width: 50%; */
+    /*width: 75%*/
+}
+
+.book-info {
+    flex: 70%; /* Makes columns share available space equally */
+    /* Or, for fixed widths: */
+    /* width: 50%; */
+    /*width: 25%*/
+    
+    justify-content: baseline;
+}
+
+.address {
+  display: flex;
+  gap: 20px;
+}
+
+.map {
+  flex: 30%;
+}
+
+.address-input {
+  margin: 24px 0px;
+  flex: 70%;
 }

@@ -2,79 +2,106 @@
 
 <html>
     <head>
-        <title>Textbook Finder</title>
+        <title>UofM Textbook Marketplace</title>
+        <link rel="stylesheet" href="styling.css">
     </head>
 
-    <body>
-        <h1>Post a Book Listing</h1>
-        <!-- <ul>
-            {% for posting in postings %}
-                <li>
-                    <h2>{{ posting.title }}</h2>
-                    <p>Author: {{ posting.author }}</p>
-                    <p>Price: ${{ posting.price }}</p>
-                    <p>Condition: {{ posting.condition }}</p>
-                    <p>Contact: {{ posting.contact_info }}</p>
-                </li> 
+    <body style="display:flex-col; padding:30px;">
+<!-- 60 -->
+        <header style="display:flex; align-items: center; justify-content: space-between; margin: 0 0 10px 0; padding: 15px;">
+            <h1>Textbook Finder</h1>
+            <div id="user-info">
+                <span>Signed in as: </span> 
+                <span id="user-name">John Smith</span>
+            </div>
+        </header>
+        
+        <hr>
+        <h2>Book Details</h2>
+        <div class="book-details">
+            <div class="book-images">
+                <div class="image-display">
+                    <img id="imgPreview1" src="/res/default_picture.png" style="width: 300px; height: auto;"/>
 
-            
-        </ul>-->
+                    <div class="image-buttons" style="margin: 10px 0px">
+                        <label for="imageUpload1">Upload Image: </label>
+                        <input type="file" id="imageUpload1" name="images[]" accept="image/*" multiple onchange="previewImage(event)">
+                        <br>
+                        <input type="button" id="addImage" value="Add image" onclick="addImage()" style="margin: 5px 3px"> 
+                        <input type="button" id="removeImage" value="Remove image" onclick="removeImage(event)">
+                    </div>
 
-        <form action="/upload-image" method="POST" enctype="multipart/form-data">
-            <label for="imageUpload">Upload Image:</label>
-            <input type="file" id="imageUpload" name="image" accept="image/*">
-            <input type="button" value="Add another image"> <!--type="submit" sends to server-->
-        </form><br>
+                    <script src="./scripts.js"></script>
 
-        <label for="title">Title: </label>
-        <input type="text" id="title" name="title">
+                </div>
+            </div>
+            <div class="book-info">
+                <label for="title">Title: </label>
+                <input type="text" id="title" name="title" style="position: relative; left: 30px; margin: 5px 0px; display: table-column; width:50%">
+                <br>
+                <label for="price">Price: </label>
+                <input type="number" id="price" name="price" style="position: relative; left: 27px; margin: 5px 0px;">
+                <br>
 
-        <label for="price">Price: </label>
-        <input type="number" id="price" name="price">
+                <label for="description">Item Description:</label>
+                <textarea id="description" name="description" rows="5" cols="40" placeholder="Type your description here..." style="margin: 7px 0px; display: table-column; width:100%"></textarea>
+                <br>
+
+                <form>
+                    <p>Select the tags for this textbook:</p>
+                    <label for="COMP3020">
+                        <input type="checkbox" id="COMP3020" name="tags[]" value="COMP3020">COMP3020<br>
+                    </label>
+                    <label for="MATH1500">
+                        <input type="checkbox" id="MATH1500" name="tags[]" value="MATH1500">MATH1500<br>
+                    </label>
+                    <label for="MATH1710">
+                        <input type="checkbox" id="MATH1710" name="tags[]" value="MATH1710">MATH1710<br>
+                    </label>
+                    <label for="COMP3380">
+                        <input type="checkbox" id="COMP3380" name="tags[]" value="COMP3380">COMP3020<br>
+                    </label>
+                </form><br>
+
+                <input type="checkbox" id="studybuddyCheck" name="studybuddyCheck" value="studybuddyCheck">
+                <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label><br>
+            </div>
+        </div>
 
 
-        <label for="description">Item Description:</label>
-        <textarea id="description" name="description" rows="5" cols="40" placeholder="Type your description here..."></textarea>
-        <br>
+        <hr style="width: 85%; margin: 10px auto;">
 
-        <form>
-            <p>Select the tags for this textbook:</p>
-            <label for="COMP3020">
-                <input type="checkbox" id="COMP3020" name="tags[]" value="COMP3020">COMP3020<br>
-            </label>
-            <label for="MATH1500">
-                <input type="checkbox" id="MATH1500" name="tags[]" value="MATH1500">MATH1500<br>
-            </label>
-            <label for="MATH1710">
-                <input type="checkbox" id="MATH1710" name="tags[]" value="MATH1710">MATH1710<br>
-            </label>
-            <label for="COMP3380">
-                <input type="checkbox" id="COMP3380" name="tags[]" value="COMP3380">COMP3020<br>
-            </label>
-        </form><br>
+        <h2>Pickup Details</h2>
+        <div class="address">
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4989.004591453563!
+                2d-97.14272422357702!3d49.80542957147627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
+                1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e1!3m2!1sen!2sca!
+                4v1762982569121!5m2!1sen!2sca" 
+                width="300" height="200" style="border:1px solid rgb(8, 140, 145); margin: 24px 0px;" 
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
 
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4989.004591453563!
-        2d-97.14272422357702!3d49.80542957147627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!
-        1s0x52ea75f0911e9c5f%3A0x5460e2841ad770fa!2sUniversity%20of%20Manitoba!5e1!3m2!1sen!2sca!
-        4v1762982569121!5m2!1sen!2sca" 
-        width="200" height="200" style="border:0;" 
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="address-input">
+                <label for="address">Pick-up Address: </label>
+                <input type="text" id="address" name="address" style="position: relative; left: 30px; display: table-column; width:50%">
+                <br>
+                <div class="show-address">
+                    
+                    <label for="showAddressCheck" style="margin-top: -12px; display:flex"><h4 style="font-weight:normal;"><input type="checkbox" id="showAddressCheck" name="showAddress" value="showAddress" style="display:inline">Show exact address?</h4></label>
+                    <h5 style="font-weight:normal; margin-top: -12px;">If not selected, will default to show radius of 5 km.</h6>
 
-        <label for="address">Pick-up Address: </label>
-        <input type="text" id="address" name="address">
+                </div>
+            </div>
+        </div>
 
-        <input type="checkbox" id="showAddressCheck" name="showAddress" value="showAddress">
-        <label for="showAddressCheck">Show exact address? If not selected, will default to show radius of 5 km.</label>
-        <br>
-
-        <input type="checkbox" id="studybuddyCheck" name="studybuddyCheck" value="studybuddyCheck">
-        <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label><br>
-
-        <form>
-            <input type="button" value="Cancel" id="cancel" name="cancel">
-            <input type="button" value="Save as draft" id="save" name="save">
-            <input type="submit" value="Post" id="post" name="post">
-        </form>
-
+        <hr>
+        <div class="final-buttons">
+            <form method="POST" style= "display:flex; flex:1; align-items: flex-start;">
+                <input type="button" value="Cancel" id="cancel" name="cancel">
+                <input type="button" value="Save as draft" id="save" name="save" style="position: relative; left: 975px">
+                <input type="button" value="Post" id="post" name="post" style="position: relative; left: 1000px">
+            </form>
+        </div>
 
 </html>
