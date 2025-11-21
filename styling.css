@@ -1,20 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
 
 :root {
+  --bg-color: #f6f6f6;
   --vanilla-custard: rgb(249, 236, 208);
   --dusty-rose: #c78283ff;
-  --steel-blue: #7a93acff;
+  --steel-blue: rgb(210, 227, 244);
   --yale-blue: #08415cff;
   --carbon-black: #262626ff;
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
 html {
   color: var(--carbon-black);
   height: 100%;
+}
+
+body {
+  display:flex; 
+  flex-direction:column;
+  padding-bottom:3px;
+  background-color: var(--bg-color); /* Using an RGB value */
+}
+
+h2 {
+  padding-left: 10px;
 }
 
 nav {
@@ -37,6 +52,7 @@ nav > * {
 
 .book-details {
     display: flex;
+    padding: 15px;
     margin: 24px 0px;
     gap: 20px; /* Optional: Adds space between columns */
 }
@@ -47,11 +63,45 @@ nav > * {
     /* width: 50%; */
     /*width: 25%*/
     padding: 20px;
-    background-color: var(--vanilla-custard);
+    background-color: var(--steel-blue);
     border-radius: 15px;
     justify-content: baseline;
 }
 
+#title {
+  position: relative;
+  left: 30px;
+  margin: 5px 0px;
+  display: table-column;
+  width:50%
+}
+#price {
+  position: relative;
+  left: 27px;
+  margin: 5px 0px;
+}
+#description {
+  margin: 7px 0px;
+  display: table-column;
+  width:100%
+}
+
+#COMP3020 {
+  display:inline;
+  margin-right:6px;
+} 
+#COMP3380 {
+  display:inline;
+  margin-right:6px;
+}
+#MATH1710 {
+  display:inline;
+  margin-right:6px;
+}
+#MATH1500 {
+  display:inline;
+  margin-right:6px;
+}
 #COMP3020:hover {
   cursor: pointer;
 }
@@ -80,7 +130,26 @@ nav > * {
 }
 
 .image-gallery {
-  flex:25%
+  flex:25%;
+  margin: 0px 5px;
+  justify-content: space-between;
+}
+
+#imgPreview0 {
+   width: 300px; 
+   height: auto;
+}
+#imgPreview1 {
+  width: 100px;
+  height: auto;
+}
+#imgPreview2 {
+  width: 100px;
+  height: auto;
+}
+#imgPreview3 {
+  width: 100px;
+  height: auto;
 }
 
 #imgPreview1:hover {
@@ -102,23 +171,58 @@ nav > * {
   cursor: pointer;
 }
 
+.image-buttons {
+  position: absolute;
+  top: 470px;
+  margin: 10px 0px
+}
+
+#addImage {
+  margin: 5px 3px;
+}
+
 .address {
   display: flex;
+  padding: 15px;
   gap: 20px;
 }
 
 .map {
-  flex: 30%;
+  flex: 15%;
+  border:1px
+  solid rgb(8, 140, 145);
+  margin: 24px 0px;
 }
 
 .address-input {
   margin: 24px 0px;
   flex: 70%;
   padding: 20px;
-  background-color: var(--vanilla-custard);
+  background-color: var(--steel-blue);
   border-radius: 15px;
+
+  position: relative;
+  left: 30px;
+  display: table-column;
+  width:50%
 }
 
+
+
+#showAddressCheck {
+  margin-top:12px;
+  display:inline;
+  margin-right:6px;
+  top: 50px;
+}
 #showAddressCheck:hover {
   cursor: pointer;
+}
+
+.final-buttons {
+  display:flex;
+  flex:1;
+  align-items: flex-start;
+  padding-bottom: 5px;
+  padding-left: 5px;
 }
