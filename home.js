@@ -180,7 +180,7 @@ function searchedData(item) {
 
     box.innerHTML = `
         <button class="bookmarkBtn">★</button>
-        <div class="itemImage">${item[0][0] ? `<img src="${item[0][0]}">` : "(no image)"}</div>
+        <div class="itemImage">${item[0] ? `<img src="${item[0]}">` : "(no image)"}</div>
         <div class="itemInfo">
             <h2>${item[1]}</h2>
             <p><strong>Price: $ ${item[3]}</p>
