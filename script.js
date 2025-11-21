@@ -1,4 +1,4 @@
-const bookmarkList = ["its","been","a","long","day","without","you","my","friend"];
+const bookmarkList = [];
 const filterList = ["Low price"];
 const bookmark = document.getElementById("BookmarkButton");
 const search = document.getElementById("searchBox");
@@ -116,7 +116,10 @@ bookmark.addEventListener("click", () => {
     } else {
         bookmarkWindow.style.display = "flex";
     }
-    
+    bookmarkAdd(bookmarkWindow);
+});
+
+function bookmarkAdd() {
     bookmarkWindow.innerHTML = "";
 
     bookmarkList.forEach((b) => {
@@ -128,15 +131,19 @@ bookmark.addEventListener("click", () => {
         btn.style.borderRadius = "1rem";
         btn.style.border = "0.15rem solid #aaa";
         btn.style.cursor = "pointer";
-        // btn.style.boxShadow = "var(--shadow)";
 
         btn.addEventListener("click", () => {
-            console.log("Clicked bookmark:", b);
+            let result = database.filter(item => {
+                let matchesSearch = item[1].toLowerCase().includes(b);
+                return matchesSearch;
+            });
+            sessionStorage.setItem("data", JSON.stringify(result));
+            window.location.href = "index.html";
         });
 
         bookmarkWindow.appendChild(btn);
     });
-});
+}
 
 filter.addEventListener("click", () => {
     const filterWindow = document.getElementById("filterWindow");
@@ -164,6 +171,7 @@ function searchedData(item) {
     box.className = "itemBox";
 
     box.innerHTML = `
+        <button class="bookmarkBtn">★</button>
         <div class="itemImage">${item[0] ? `<img src="${item[0]}">` : "(no image)"}</div>
         <div class="itemInfo">
             <h2>${item[1]}</h2>
@@ -171,7 +179,17 @@ function searchedData(item) {
             <p><strong>Seller: ${item[4]}</p>
             <p><strong>Description: ${item[5]}</p>
         </div>
+
     `;
+    box.querySelector(".bookmarkBtn").addEventListener("click", (event) => {
+        event.stopPropagation();
+        bookmarkList.push(item[1]);
+        bookmarkAdd(document.getElementById("bookmarkWindow"));
+    });
+    box.addEventListener("click", () => {
+        sessionStorage.setItem("data", JSON.stringify(item));
+        window.location.href = "index.html";
+    });
     searchList.appendChild(box);
 }
 
