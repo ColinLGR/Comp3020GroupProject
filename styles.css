@@ -95,9 +95,9 @@ main {
 }
 
 #description {
-  /* width: 70%; */
-  min-width: 50%;
-  max-width: 70%;
+    /* width: 70%; */
+    min-width: 50%;
+    max-width: 70%;
 }
 
 hr {
@@ -214,4 +214,62 @@ hr {
   .previews {
     grid-column: 1;
   }
+}
+/* Tested in Chrome Dev Tools and this is when the grid layout falls apart */
+@media (max-width: 1050px) {
+  main {
+    grid-template-columns: 1fr; 
+  }
+
+  .main-photo {
+    grid-column: 1; 
+  }
+
+  .previews {
+    grid-column: 1; 
+  }
+}
+
+.study {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #62b9f7;
+  margin: 0 0 5px 0 ;
+  grid-column-start: 2;
+}
+
+#study-title {
+    margin: 0 0 0 5px;
+    
+}
+
+#study-subtitle{
+    margin: 0 0 0 5px;
+    
+}
+
+.buddy-profile {
+    margin: 5px 5px 5px 5px;
+    height: 50px;
+    width: 50px;
+}
+
+.buddy-profile-name {
+    position: relative;
+    top: -25px;
+}
+
+.contact-button {
+    position: relative;
+    top: -25px;
+    margin: 0 50px 0 10px;
+}
+
+.contact-popup {
+    background: white;
+    position: absolute;
+    border: 3px solid #62b9f7;
+    margin: -200px 0 0 -3px;
+    display: none;
 }
