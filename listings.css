@@ -25,7 +25,6 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 15px;
-  height: 6rem;
   background: var(--yale-blue);
   color: #f9f1f1;
 }
@@ -52,7 +51,8 @@ main {
   /* gap: 30px; */
   padding: 20px 0;
   background-color: #f6f6f6;
-  height: calc(100vh - 10rem);
+  min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -144,7 +144,6 @@ hr {
 
 .study-buddies {
   width: 100%;
-  height: 4rem;
 }
 
 #chat-button {
