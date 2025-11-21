@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
+
 :root {
   --hover-color: skyblue;
   --border-radius: 1rem;
@@ -7,13 +9,14 @@
 
 
 body {
-  font-family: 'Consolas';
+  font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0px;
 }
 
 header {
   display: flex;
-  background-color: skyblue;
+  background-color: #08415cff;
+  color: #f9f1f1;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
@@ -303,6 +306,7 @@ header {
   transform: scale(1.04);
   box-shadow: var(--shadow);
 }
+
 .itemImage {
   flex: 0 0 7rem;
   width: 7rem;
@@ -317,8 +321,9 @@ header {
 .itemImage img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  border-radius: 1rem;
 }
+
 .itemInfo {
   flex: 1;
   display: flex;
