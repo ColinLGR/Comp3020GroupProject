@@ -16,7 +16,7 @@ const database =
     ["https://archive.org/services/img/isbn_9780968199558/full/pct:200/0/default.jpg","Garry L. Martin: Applied Sport Psychology", "Psychology", 30.00,"Patrick S","Sport Psychology book for PSYCH1200, fair condition, worn spine.","789 Maple Ave, Winnipeg"],
     ["https://m.media-amazon.com/images/I/61RpDc2z6LL._AC_UF1000,1000_QL80_.jpg","Beth Morling: Research Methods in Psychology", "psychology", 40.00,"Garry V","Texbook for PSYC2250, used condition.","101 Oak St, Winnipeg"],
     //ECON books
-    ["	https://m.media-amazon.com/images/I/810gS3q6U5L._SY385_.jpg","Paul Krugman: Microeconomics: Canadian Edition", "Economics", 40.00,"James P","Texbook for ECON1010, great condition, no damage.","202 Pine Rd, Winnipeg"],
+    ["https://m.media-amazon.com/images/I/810gS3q6U5L._SY385_.jpg","Paul Krugman: Microeconomics: Canadian Edition", "Economics", 40.00,"James P","Texbook for ECON1010, great condition, no damage.","202 Pine Rd, Winnipeg"],
     ["https://m.media-amazon.com/images/I/81u7zSsD24L._AC_UF1000,1000_QL80_.jpg","N. Gregory Mankiw: Macroeconomics: Twelfth Edition", "Economics", 40.00,"Natalia P","Textbook for ECON2020, like-new condition","303 Cedar Ln, Winnipeg"],
     //Math book
     ["https://m.media-amazon.com/images/I/81+xORCwIUL._AC_UF1000,1000_QL80_.jpg","John A. Beachy: Abstract Algebra", "Math", 40.00,"Minnette F","Texbook for MATH3320, mint condition.","404 Birch Blvd, Winnipeg"],
@@ -31,7 +31,7 @@ const database =
     //Geology
     ["https://m.media-amazon.com/images/I/81nPqkvZ09L._AC_UF1000,1000_QL80_.jpg","Reed Wicander: Historical Geology","Geology", 35.00, "Jordan G","Textbook for GEOL1400, fair condition.","111 Pine Rd, Winnipeg"],
     //Marketing
-    ["	https://m.media-amazon.com/images/I/61VIKY4Rr+L._SY385_.jpg","Principles of Marketing","Marketing", 20.00,"Edward V", "Textbook for MKT2210, like-new condition","222 Cedar Ln, Winnipeg"],
+    ["https://m.media-amazon.com/images/I/61VIKY4Rr+L._SY385_.jpg","Principles of Marketing","Marketing", 20.00,"Edward V", "Textbook for MKT2210, like-new condition","222 Cedar Ln, Winnipeg"],
     //Astronomy
     ["https://m.media-amazon.com/images/I/41Pd+PYHSfL._UF1000,1000_QL80_.jpg","Chaisson McMillan: Astronomy Today","Astronomy", 40.00, "Colin L","Textbook for ASTR1810, used condition.","333 Birch Blvd, Winnipeg"],
     //Chem
@@ -116,7 +116,7 @@ bookmark.addEventListener("click", () => {
     } else {
         bookmarkWindow.style.display = "flex";
     }
-    bookmarkAdd(bookmarkWindow);
+    bookmarkAdd();
 });
 
 function bookmarkAdd() {
@@ -124,7 +124,7 @@ function bookmarkAdd() {
 
     bookmarkList.forEach((b) => {
         const btn = document.createElement("button");
-        btn.textContent = b;
+        btn.textContent = b[1];
         btn.style.width = "100%";
         btn.style.margin = "0.2rem 0";
         btn.style.padding = "1rem";
@@ -137,8 +137,16 @@ function bookmarkAdd() {
                 let matchesSearch = item[1].toLowerCase().includes(b);
                 return matchesSearch;
             });
-            sessionStorage.setItem("data", JSON.stringify(result));
-            window.location.href = "index.html";
+            sessionStorage.setItem("data", JSON.stringify({
+                img: b[0],
+                title: b[1],
+                category: b[2],
+                price: b[3],
+                seller: b[4],
+                description: b[5],
+                address: b[6]
+            }));
+            window.location.href = "listing.html";
         });
 
         bookmarkWindow.appendChild(btn);
@@ -183,12 +191,20 @@ function searchedData(item) {
     `;
     box.querySelector(".bookmarkBtn").addEventListener("click", (event) => {
         event.stopPropagation();
-        bookmarkList.push(item[1]);
-        bookmarkAdd(document.getElementById("bookmarkWindow"));
+        bookmarkList.push(item);
+        bookmarkAdd(document.getElementById(""));
     });
     box.addEventListener("click", () => {
-        sessionStorage.setItem("data", JSON.stringify(item));
-        window.location.href = "index.html";
+        sessionStorage.setItem("data", JSON.stringify({
+            img: item[0],
+            title: item[1],
+            category: item[2],
+            price: item[3],
+            seller: item[4],
+            description: item[5],
+            address: item[6]
+        }));
+        window.location.href = "listing.html";
     });
     searchList.appendChild(box);
 }
