@@ -103,45 +103,4 @@ let simulateReply = (userMsg) => {
 
     }, 1000)
 
-
-    // f (userMsg.includes("price") || userMsg.includes("negotiate")  userMsg.includes("cost")) {
-    //     replyText = "The price is firm at $" + bookPrice + ", but I might consider a small discount if you can pick it up near my location today!";
-    // } else if (userMsg.includes("available")  userMsg.includes("still there")) {
-    //     replyText = "Yes, the book is currently still available!";
-    // } else if (userMsg.includes("location")  userMsg.includes("where")) {
-    //     replyText = "I'm located near " + bookLocation + ". When can you meet?";
-    // } else if (userMsg.includes("condition") || userMsg.includes("wear")) {
-    //     replyText = "The condition is as listed: " + bookDescription + ".";
-    // } else {
-    //     replyText = "Thanks for your interest! What is the best time for you to arrange a pickup?";
-    // }
-
 }
-
-
-
-// let contactButtons = document.getElementsByClassName("contact-button");
-// let contactPopups = document.getElementsByClassName("contact-popup");
-
-// //Show the contact info of the profile that was clicked and hide all the other ones
-// for (let i = 0; i< contactButtons.length; i++) {
-//     contactButtons[i].addEventListener("click", () => {
-//         contactPopups[i].setAttribute("style", "display: block");
-//         for(let j = 0; j< contactButtons.length; j++)
-//         {
-//             if(j != i)
-//             {
-//                 contactPopups[j].setAttribute("style", "display: none");
-//             }
-//         }
-//     })
-// }
-
-// let closeBuddyPopups = document.getElementsByClassName("close-buddy-popup");
-
-// //Close the contact info popup
-// for (let i = 0; i< closeBuddyPopups.length; i++) {
-//     closeBuddyPopups[i].addEventListener("click", () => {
-//         contactPopups[i].setAttribute("style", "display: none");
-//     })
-// }
