@@ -11,6 +11,14 @@
     /*width: 75%*/
 }
 
+.image-display {
+  display: flex;
+}
+
+.image-gallery {
+  flex:25%
+}
+
 .book-info {
     flex: 70%; /* Makes columns share available space equally */
     /* Or, for fixed widths: */

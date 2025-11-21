@@ -21,16 +21,30 @@
         <div class="book-details">
             <div class="book-images">
                 <div class="image-display">
-                    <img id="imgPreview1" src="/res/default_picture.png" style="width: 300px; height: auto;"/>
+                    <img id="imgPreview0" src="/res/default_picture.png" style="width: 300px; height: auto;"/>
 
-                    <div class="image-buttons" style="margin: 10px 0px">
+
+
+                    <div class="image-gallery" style="margin: 0px 5px; justify-content: space-between;"> 
+                        <button type="button">
+                            <img id="imgPreview1" src="/res/default_picture.png" onclick="setButton1(event)" style="width: 100px; height: auto;"/>
+                        </button>
+                        <button type="button">
+                            <img id="imgPreview2" src="/res/default_picture.png" onclick="setButton2(event)" style="width: 100px; height: auto;"/>
+                        </button>
+                        <button type="button">
+                            <img id="imgPreview3" src="/res/default_picture.png" onclick="setButton3(event)" style="width: 100px; height: auto;"/>
+                        </button>
+                    </div>
+                    
+                    <div class="image-buttons" style="position: absolute; top: 560px; margin: 10px 0px">
                         <label for="imageUpload1">Upload Image: </label>
                         <input type="file" id="imageUpload1" name="images[]" accept="image/*" multiple onchange="previewImage(event)">
+                        <!-- onchange="previewImage(event)"> -->
                         <br>
-                        <input type="button" id="addImage" value="Add image" onclick="addImage()" style="margin: 5px 3px"> 
+                        <input type="button" id="addImage" value="Add image" onclick="addImage(event)" style="margin: 5px 3px"> 
                         <input type="button" id="removeImage" value="Remove image" onclick="removeImage(event)">
                     </div>
-
                     <script src="./scripts.js"></script>
 
                 </div>
@@ -67,7 +81,7 @@
                 <label for="studybuddyCheck">Do you want to find a study buddy for the class(es)?</label><br>
             </div>
         </div>
-
+        <br>
 
         <hr style="width: 85%; margin: 10px auto;">
 
