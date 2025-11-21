@@ -16,11 +16,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 15px;
   background-color: #08415cff;
   color: #f9f1f1;
-  border-bottom: 0.2rem solid #ccc;
-  height: 4rem;
+  height: 40px;
 }
 
 header h1 {
