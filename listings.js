@@ -49,28 +49,28 @@ chatInput.addEventListener("keypress", function(e) {
 
 
 
-let contactButtons = document.getElementsByClassName("contact-button");
-let contactPopups = document.getElementsByClassName("contact-popup");
+// let contactButtons = document.getElementsByClassName("contact-button");
+// let contactPopups = document.getElementsByClassName("contact-popup");
 
-//Show the contact info of the profile that was clicked and hide all the other ones
-for (let i = 0; i< contactButtons.length; i++) {
-    contactButtons[i].addEventListener("click", () => {
-        contactPopups[i].setAttribute("style", "display: block");
-        for(let j = 0; j< contactButtons.length; j++)
-        {
-            if(j != i)
-            {
-                contactPopups[j].setAttribute("style", "display: none");
-            }
-        }
-    })
-}
+// //Show the contact info of the profile that was clicked and hide all the other ones
+// for (let i = 0; i< contactButtons.length; i++) {
+//     contactButtons[i].addEventListener("click", () => {
+//         contactPopups[i].setAttribute("style", "display: block");
+//         for(let j = 0; j< contactButtons.length; j++)
+//         {
+//             if(j != i)
+//             {
+//                 contactPopups[j].setAttribute("style", "display: none");
+//             }
+//         }
+//     })
+// }
 
-let closeBuddyPopups = document.getElementsByClassName("close-buddy-popup");
+// let closeBuddyPopups = document.getElementsByClassName("close-buddy-popup");
 
-//Close the contact info popup
-for (let i = 0; i< closeBuddyPopups.length; i++) {
-    closeBuddyPopups[i].addEventListener("click", () => {
-        contactPopups[i].setAttribute("style", "display: none");
-    })
-}
+// //Close the contact info popup
+// for (let i = 0; i< closeBuddyPopups.length; i++) {
+//     closeBuddyPopups[i].addEventListener("click", () => {
+//         contactPopups[i].setAttribute("style", "display: none");
+//     })
+// }

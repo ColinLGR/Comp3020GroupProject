@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link href="./styles.css" rel="stylesheet">
-        <title>TextUM</title>
-    </head>
-    <body>
-        <nav>
-            <h1>Textbook Finder</h1>
-            <div id="user-info">
-                <span>Signed in as: </span>
-                <span id="user-name">John Smith</span>
 
-            </div>
-        </nav>
-        <main>
-            <!-- These images will be placeholders -->
+<head>
+    <meta charset="utf-8">
+    <link href="./styles.css" rel="stylesheet">
+    <title>TextUM</title>
+</head>
+
+<body>
+    <nav>
+        <h1>Textbook Finder</h1>
+        <div id="user-info">
+            <span>Signed in as: </span>
+            <span id="user-name">John Smith</span>
+
+        </div>
+    </nav>
+    <main>
+        <!-- These images will be placeholders -->
+        <div class="listing-container">
             <section class="images">
                 <div class="previews">
-                    <img class="image-preview"
-                        src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
+                    <img class="image-preview" src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
                         alt="Intro To Calculus">
                     <img class="image-preview"
                         src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781476740195/the-library-book-9781476740195_lg.jpg"
                         alt="Intro To Calculus">
-                    <img class="image-preview"
-                        src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
+                    <img class="image-preview" src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
                         alt="Intro To Calculus">
                 </div>
-                <img
-                    src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg"
-                    alt="Intro to Calculus" id="main-photo">
+                <img src="https://m.media-amazon.com/images/I/61AKjNlFdqL._SY466_.jpg" alt="Intro to Calculus"
+                    id="main-photo">
             </section>
             <section class="info">
                 <div class="book-info">
@@ -50,56 +50,85 @@
                         defects must be noted.</p>
                 </div>
             </section>
-            <section class="study">
-                <section class="study-buddies">
+        </div>
+        <section class="study">
+            <section class="study-buddies">
 
-                    <h3 id="study-title">Looking for Study Buddies?</h3>
-                    <span id="study-subtitle">People also interested in this
-                        book:</span>
+                <h3 id="study-title">Looking for Study Buddies?</h3>
+                <span id="study-subtitle">People also interested in this
+                    book:</span>
 
-                    <div class="profile-list">
+                <div class="profile-list">
+
+
+                    <div class="buddy-wrapper">
                         <img class="buddy-profile"
                             src="https://i.guim.co.uk/img/media/327aa3f0c3b8e40ab03b4ae80319064e401c6fbc/377_133_3542_2834/master/3542.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=34d32522f47e4a67286f9894fc81c863"
                             alt="Jim Jimothy">
-                        <span class="buddy-profile-name">Jim Jimothy</span>
+                        <div class="buddy">
+                            <span class="buddy-profile-name">Jim Jimothy</span>
 
-                        <button class="contact-button">Contact</button>
-                        <div class="contact-popup">
+                            <button class="contact-button">
+
+                                <a href="mailto:example@gmail.com">
+                                    Contact
+                                </a>
+
+                            </button>
+
+
+                        </div>
+                    </div>
+
+                    <div class="contact-popup">
+                        <div class="info-wrapper">
+
                             <h3 id="buddy-email-title">Buddy Email:</h3>
                             <p id="buddy-email">Jimothyj2@myumanitoba.ca</p>
-                            <button class="close-buddy-popup">Close</button>
                         </div>
+                        <button class="close-buddy-popup">Close</button>
+                    </div>
+                    <div class="buddy-wrapper">
                         <img class="buddy-profile"
                             src="https://dv9b2v6p3dpu5.cloudfront.net/transforms/pets/2035924/3459ef27-d78d-4ad8-8662-973c612c9506_6c0c164bd2b597ee32b68b8b5755bd2e.jpg"
                             alt="Bob Bobby">
-                        <span class="buddy-profile-name">Bob Bobby</span>
 
-                        <button class="contact-button">Contact</button>
-                        <div class="contact-popup">
-                            <h3 id="buddy-email-title">Buddy Email:</h3>
-                            <p id="buddy-email">Bobbyb4@myumanitoba.ca</p>
-                            <button class="close-buddy-popup">Close</button>
+                        <div class="buddy">
+                            <span class="buddy-profile-name">Bob Bobby</span>
+                            <button class="contact-button">Contact</button>
                         </div>
                     </div>
-                </section>
-            </section>
-            <section id="chat">
-                <div class="chat-header">
-                    <p>Chat with Seller</p>
-                    <p id="exit-button">X</p>
-                </div>
-                <div id="chat-body">
-                </div>
-                <div class="send-input">
-                    <input id="chat-input" type="text"
-                        placeholder="Enter a message">
-                </div>
 
+
+                    <div class="contact-popup">
+                        <div class="info-wrapper">
+
+                            <h3 id="buddy-email-title">Buddy Email:</h3>
+                            <p id="buddy-email">Bobbyb4@myumanitoba.ca</p>
+                        </div>
+                        <button class="close-buddy-popup">Close</button>
+                    </div>
+
+                </div>
             </section>
-            <div id="chat-button">
-                Contact Seller
+        </section>
+        <section id="chat">
+            <div class="chat-header">
+                <p>Chat with Seller</p>
+                <p id="exit-button">X</p>
             </div>
-        </main>
-        <script src="./listings.js"></script>
-    </body>
+            <div id="chat-body">
+            </div>
+            <div class="send-input">
+                <input id="chat-input" type="text" placeholder="Enter a message">
+            </div>
+
+        </section>
+        <div id="chat-button">
+            Contact Seller
+        </div>
+    </main>
+    <script src="./listings.js"></script>
+</body>
+
 </html>
