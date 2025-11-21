@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
+
+:root {
+  --vanilla-custard: rgb(242, 240, 223);
+  --dusty-rose: #c78283ff;
+  --steel-blue: #7a93acff;
+  --yale-blue: #08415cff;
+  --carbon-black: #262626ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+html {
+  color: var(--carbon-black);
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: var(--yale-blue);
+  color: #f9f1f1;
+}
+
+nav > * {
+  color: #f4eee0;
+}
+
+#user-name {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+main {
+  /* gap: 30px; */
+  padding: 20px 0;
+  background-color: #f6f6f6;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.images {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+  /* padding: 15px; */
+  /* justify-content: flex-start; */
+  gap: 20px;
+}
+
+.previews {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.image-preview {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 5px solid transparent;
+  transition: transform 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
+}
+
+.image-preview:hover {
+  border: 5px solid #62b9f7;
+  transform: scale(1.05);
+  border-radius: 20px;
+}
+
+#main-photo {
+  width: 370px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+  width: 100%;
+  font-size: 1.5rem;
+  flex: 1;
+}
+
+#description {
+  max-height: 60%;
+  min-width: 50%;
+  overflow: auto;
+}
+
+.book-info {
+  margin-bottom: 10px;
+}
+
+#author {
+  font-size: 0.75em;
+}
+
+#price {
+  margin-bottom: 10px;
+}
+
+#seller-name {
+  margin-bottom: 10px;
+}
+
+#description {
+  /* width: 70%; */
+  min-width: 50%;
+  max-width: 70%;
+}
+
+hr {
+  border-color: #0e1111;
+  width: 70%;
+  opacity: 0.6;
+  margin: 10px 0;
+}
+
+.study-buddies {
+  width: 100%;
+}
+
+#chat-button {
+  position: fixed;
+  background-color: #62b9f7;
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  bottom: 85px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.8rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#chat-button:hover {
+  transform: scale(1.1);
+  background-color: #90c9f1;
+}
+
+#chat {
+  background-color: #f1ecef;
+  /* background-color: red; */
+  position: fixed;
+  right: -400px;
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(24, 8, 8);
+  transition: right 0.3s ease, opacity 0.3s ease;
+  /* z-index: 2; */
+}
+
+.chat-header {
+  background: var(--yale-blue);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  color: #f9f1f1;
+}
+
+#chat.open {
+  right: 0;
+  opacity: 1;
+}
+
+#chat-body {
+  /* flex: 1; */
+  height: calc(100vh - 190px);
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#exit-button {
+  cursor: pointer;
+}
+
+.send-input {
+  width: 100%;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+.send-input input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  outline: none;
+}
+
+.chat-bubble {
+  color: white;
+  padding: 10px 15px;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.sender {
+  align-self: flex-start;
+  background-color: #62b9f7;
+  border-radius: 20px 20px 20px 0px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #545454;
+  border-radius: 20px 20px 0 20px;
+
+}
+
+#study-title {
+  color: #f4eee0;
+}
+
+#study-subtitle {
+  color: #f4eee0;
+}
+
+.buddy-profile {
+  margin: 5px 5px 5px 5px;
+  height: 50px;
+  width: 50px;
+  border-radius: 5px;
+}
+
+.contact-button {
+  margin: 0 50px 0 10px;
+  padding: 5px;
+}
+
+.contact-popup {
+  background: white;
+  position: absolute;
+  border: 3px solid #62b9f7;
+  margin: -200px 0 0 -3px;
+  display: none;
+}
+
+.listing-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buddy {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+.buddy-wrapper {
+  display: flex;
+}
+
+.profile-list {
+  display: flex;
+}
+
+.contact-button {
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+.study-buddies {
+
+width: 100%;  
+  color: #e2dcce;
+  background: var(--yale-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 15px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  
+}
