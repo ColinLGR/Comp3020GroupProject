@@ -33,6 +33,7 @@ const addImage = (event) => {
 
             var imageEl = document.getElementById(fullPrevId);
             imageEl.src = imageUrl0;
+            currImage = -1;
         }
         else if (imgCounter < maxImgs)
         {

@@ -6,38 +6,41 @@
         <link rel="stylesheet" href="styling.css">
     </head>
 
-    <body style="display:flex-col; padding:30px;">
+    <body style="display:flex-col; padding:0px;">
 <!-- 60 -->
-        <header style="display:flex; align-items: center; justify-content: space-between; margin: 0 0 10px 0; padding: 15px;">
-            <h1>Textbook Finder</h1>
-            <div id="user-info">
-                <span>Signed in as: </span> 
-                <span id="user-name">John Smith</span>
-            </div>
-        </header>
-        
+        <nav>
+            <header>
+                <h1>Textbook Finder</h1>
+                <div id="user-info">
+                    <span>Signed in as: </span> 
+                    <span id="user-name">John Smith</span>
+                </div>
+            </header>
+        </nav>
+
         <hr>
+
         <h2>Book Details</h2>
         <div class="book-details">
             <div class="book-images">
                 <div class="image-display">
-                    <img id="imgPreview0" src="/res/default_picture.png" style="width: 300px; height: auto;"/>
+                    <img id="imgPreview0" src="https://arthurmillerfoundation.org/wp-content/uploads/2018/06/default-placeholder.png" style="width: 300px; height: auto;"/>
 
 
 
                     <div class="image-gallery" style="margin: 0px 5px; justify-content: space-between;"> 
                         <button type="button">
-                            <img id="imgPreview1" src="/res/default_picture.png" onclick="setButton1(event)" style="width: 100px; height: auto;"/>
+                            <img id="imgPreview1" src="https://arthurmillerfoundation.org/wp-content/uploads/2018/06/default-placeholder.png" onclick="setButton1(event)" style="width: 100px; height: auto;"/>
                         </button>
                         <button type="button">
-                            <img id="imgPreview2" src="/res/default_picture.png" onclick="setButton2(event)" style="width: 100px; height: auto;"/>
+                            <img id="imgPreview2" src="https://arthurmillerfoundation.org/wp-content/uploads/2018/06/default-placeholder.png" onclick="setButton2(event)" style="width: 100px; height: auto;"/>
                         </button>
                         <button type="button">
-                            <img id="imgPreview3" src="/res/default_picture.png" onclick="setButton3(event)" style="width: 100px; height: auto;"/>
+                            <img id="imgPreview3" src="https://arthurmillerfoundation.org/wp-content/uploads/2018/06/default-placeholder.png" onclick="setButton3(event)" style="width: 100px; height: auto;"/>
                         </button>
                     </div>
                     
-                    <div class="image-buttons" style="position: absolute; top: 560px; margin: 10px 0px">
+                    <div class="image-buttons" style="position: absolute; top: 600px; margin: 10px 0px">
                         <label for="imageUpload1">Upload Image: </label>
                         <input type="file" id="imageUpload1" name="images[]" accept="image/*" multiple onchange="previewImage(event)">
                         <!-- onchange="previewImage(event)"> -->

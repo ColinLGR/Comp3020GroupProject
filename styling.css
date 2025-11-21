@@ -1,7 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap");
+
+:root {
+  --vanilla-custard: rgb(249, 236, 208);
+  --dusty-rose: #c78283ff;
+  --steel-blue: #7a93acff;
+  --yale-blue: #08415cff;
+  --carbon-black: #262626ff;
+}
+
+* {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+html {
+  color: var(--carbon-black);
+  height: 100%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  background: var(--yale-blue);
+  color: #f9f1f1;
+}
+
+nav > * {
+  color: #f4eee0;
+}
+
+#user-name {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .book-details {
     display: flex;
     margin: 24px 0px;
     gap: 20px; /* Optional: Adds space between columns */
+}
+
+.book-info {
+    flex: 70%; /* Makes columns share available space equally */
+    /* Or, for fixed widths: */
+    /* width: 50%; */
+    /*width: 25%*/
+    padding: 20px;
+    background-color: var(--vanilla-custard);
+    border-radius: 15px;
+    justify-content: baseline;
+}
+
+#COMP3020:hover {
+  cursor: pointer;
+}
+#COMP3380:hover {
+  cursor: pointer;
+}
+#MATH1710:hover {
+  cursor: pointer;
+}
+#MATH1500:hover {
+  cursor: pointer;
+}
+#studybuddyCheck:hover {
+  cursor: pointer;
 }
 
 .book-images {
@@ -19,13 +83,23 @@
   flex:25%
 }
 
-.book-info {
-    flex: 70%; /* Makes columns share available space equally */
-    /* Or, for fixed widths: */
-    /* width: 50%; */
-    /*width: 25%*/
-    
-    justify-content: baseline;
+#imgPreview1:hover {
+  border: 2px solid #62b9f7;
+  transform: scale(1.25);
+  border-radius: 1px;
+  cursor: pointer;
+}
+#imgPreview2:hover {
+  border: 2px solid #62b9f7;
+  transform: scale(1.25);
+  border-radius: 1px;
+  cursor: pointer;
+}
+#imgPreview3:hover {
+  border: 2px solid #62b9f7;
+  transform: scale(1.25);
+  border-radius: 1px;
+  cursor: pointer;
 }
 
 .address {
@@ -40,4 +114,11 @@
 .address-input {
   margin: 24px 0px;
   flex: 70%;
+  padding: 20px;
+  background-color: var(--vanilla-custard);
+  border-radius: 15px;
+}
+
+#showAddressCheck:hover {
+  cursor: pointer;
 }
