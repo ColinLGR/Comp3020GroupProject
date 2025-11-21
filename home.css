@@ -355,19 +355,18 @@ header p {
 .itemInfo p {
   margin: 0.2rem 0;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
 .bookmarkBtn {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 0.5rem;
+    right: 0.5rem;
     background: white;
-    padding: 4px 6px;
-    border-radius: 6px;
-    font-size: 18px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
     cursor: pointer;
-    z-index: 10;             /* make sure it's above img */
+    z-index: 10;
 }
