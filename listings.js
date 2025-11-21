@@ -19,9 +19,13 @@ let openChatButton = document.getElementById("chat-button");
 let chatPanel = document.getElementById("chat");
 let exitButton = document.getElementById("exit-button")
 
+const chatInput = document.getElementById("chat-input");
+const chatBody = document.getElementById("chat-body");
+
 openChatButton.addEventListener("click", () => {
     chatPanel.classList.add("open");
     openChatButton.style.display = "none";
+    chatInput.focus();
 });
 
 exitButton.addEventListener("click", () => {
@@ -30,22 +34,86 @@ exitButton.addEventListener("click", () => {
 
 });
 
-const chatInput = document.getElementById("chat-input");
-const chatBody = document.getElementById("chat-body");
 
 chatInput.addEventListener("keypress", function(e) {
     if (e.key === "Enter" && chatInput.value.trim() !== "") {
         const bubble = document.createElement("div");
         bubble.classList.add("chat-bubble");
+        bubble.classList.add("user");
         bubble.textContent = chatInput.value;
 
         chatBody.appendChild(bubble);
+
+        simulateReply(chatInput.value)
 
         chatBody.scrollTop = chatBody.scrollHeight;
 
         chatInput.value = "";
     }
 });
+
+let simulateReply = (userMsg) => {
+    let replyText = "";
+
+    if (userMsg.includes("available")) {
+        replyText = "It's still available, would you like to buy it?"
+
+    }
+    else if (userMsg.includes("hi") || userMsg.includes("hello")) {
+        replyText = "Hello! How can I help you with this item?"
+    }
+    else if (userMsg.includes("how are you")) {
+        replyText = "I'm doing good. Any questions?"
+    }
+    else if (userMsg.includes("price") || userMsg.includes("cost")) {
+        replyText = "The price is $10"
+    }
+    else if (userMsg.includes("lower" || userMsg.includes("negotiate"))) {
+        let chance = Math.random()
+
+        if (chance < 0.5) {
+            replyText = "I cannot lower the price, sorry"
+        }
+        else {
+            replyText = "Sure, I can take 20% off the price"
+        }
+    }
+    else if (userMsg.includes("location") || userMsg.includes("where")) {
+        replyText = "I'm located near the U of M. When can you meet?"
+    }
+
+    else {
+        replyText = "I'm not really sure what you mean, can we stick to talking about the textbook"
+    }
+    setTimeout(() => {
+        const bubble = document.createElement("div");
+        bubble.classList.add("chat-bubble");
+        bubble.classList.add("sender");
+        bubble.textContent = replyText;
+
+        chatBody.appendChild(bubble);
+
+        replyText = ""
+
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+
+    }, 1000)
+
+
+    // f (userMsg.includes("price") || userMsg.includes("negotiate")  userMsg.includes("cost")) {
+    //     replyText = "The price is firm at $" + bookPrice + ", but I might consider a small discount if you can pick it up near my location today!";
+    // } else if (userMsg.includes("available")  userMsg.includes("still there")) {
+    //     replyText = "Yes, the book is currently still available!";
+    // } else if (userMsg.includes("location")  userMsg.includes("where")) {
+    //     replyText = "I'm located near " + bookLocation + ". When can you meet?";
+    // } else if (userMsg.includes("condition") || userMsg.includes("wear")) {
+    //     replyText = "The condition is as listed: " + bookDescription + ".";
+    // } else {
+    //     replyText = "Thanks for your interest! What is the best time for you to arrange a pickup?";
+    // }
+
+}
 
 
 

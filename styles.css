@@ -219,18 +219,24 @@ hr {
 }
 
 .chat-bubble {
-  align-self: flex-end;
-  /* right side for your messages */
-  background-color: #62b9f7;
-  /* blue bubble */
   color: white;
   padding: 10px 15px;
-  border-radius: 20px 20px 0 20px;
-  /* rounded corners, tail effect */
   max-width: 70%;
   word-wrap: break-word;
 }
 
+.sender {
+  align-self: flex-start;
+  background-color: #62b9f7;
+  border-radius: 20px 20px 20px 0px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #545454;
+  border-radius: 20px 20px 0 20px;
+
+}
 
 #study-title {
   color: #f4eee0;
