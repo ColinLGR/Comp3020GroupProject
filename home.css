@@ -14,9 +14,25 @@ body {
 }
 
 header {
-  display: flex;
-  background-color: #08415cff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+      background-color: #08415cff;
   color: #f9f1f1;
+    border-bottom: 0.2rem solid #ccc;
+    height: 4rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+}
+
+header p {
+    margin: 0;
+    font-size: 1.5rem;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
@@ -70,7 +86,7 @@ header {
   border: 0.2rem solid #aaa;
   cursor: pointer;
   background-color: white;
-  box-shadow: 0 0 1rem darkgray;
+  box-shadow: var(--shadow);
   width: 100%;
   text-align: center;
   transition: transform 0.2s ease;
@@ -111,7 +127,6 @@ header {
   z-index: 1;
   justify-content: center;
   align-items: center;
-  line-height: 0.5rem;
   font-size: 1.5rem;
 }
 #mapLocation {
@@ -120,17 +135,17 @@ header {
   left: 0;
   right: 0;
   display: flex;
-  min-height: 3rem;
+  height: 3rem;
   width: 100%;
   background: white;
   border-top: 0.2rem solid #ccc;
   z-index: 1;
   justify-content: center;
   align-items: center;
-  line-height: 0.5rem;
   font-size: 1.5rem;
 }
-.map-marker, .item-marker {
+.map-marker,
+.item-marker {
   position: absolute;
   width: 2rem;
   height: 2rem;
