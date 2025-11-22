@@ -44,7 +44,7 @@ const database =
     // Engineering
     [["https://m.media-amazon.com/images/I/91SEZwPPQPL._UF1000,1000_QL80_.jpg"], "Engineering Mechanics: Statics, 9th Edition", "Engineering", 50.00,"Suki W","Texbook for ENG1440, like-new condition","777 Maple Ave, Winnipeg"]];
 
-    database.forEach(item => {
+database.forEach(item => {
     searchedData(item);
     if (!filterList.some(f => f.toLowerCase() === item[2].toLowerCase())) {
         filterList.push(item[2]);
@@ -125,6 +125,13 @@ function bookmarkAdd() {
     bookmarkWindow.innerHTML = "";
 
     bookmarkList.forEach((b) => {
+        const alreadyExists = Array.from(bookmarkWindow.children)
+            .some(child => child.textContent.trim().toLowerCase() === b.trim().toLowerCase());
+
+        if (alreadyExists) {
+            return;
+        }
+
         const btn = document.createElement("button");
         btn.textContent = b;
         btn.style.width = "100%";
@@ -136,11 +143,11 @@ function bookmarkAdd() {
 
         btn.addEventListener("click", () => {
             let result = database.filter(item => {
-                let matchesSearch = item[1].toLowerCase().includes(b);
+                let matchesSearch = item[1].toLowerCase() === b.toLowerCase();
                 return matchesSearch;
             });
-            sessionStorage.setItem("data", JSON.stringify(result));
-            window.location.href = "index.html";
+            sessionStorage.setItem("data", JSON.stringify(result[0]));
+            window.location.href = "listings.html";
         });
 
         bookmarkWindow.appendChild(btn);
