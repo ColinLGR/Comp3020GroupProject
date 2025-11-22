@@ -121,9 +121,9 @@ document.getElementById("post").addEventListener("click", () => {
     const data = [
         [imgs],
         document.getElementById("title").value.trim(),
-        document.getElementById("price").value.trim(),
-        "John Smith",
         document.querySelector('input[name="tag"]:checked')?.value || "",
+        parseFloat(document.getElementById("price").value.trim()),
+        "John Smith",
         document.getElementById("description").value.trim(),
         document.getElementById("address").value.trim()
     ];
@@ -132,10 +132,10 @@ document.getElementById("post").addEventListener("click", () => {
         window.alert("Please fill in the title of the Book");
     }
     else if(data[2] === "") {
-        window.alert("Please fill in the price of the Book");
-    }
-    else if(data[4] === "") {
         window.alert("Please choose a tag");
+    }
+    else if(data[3] === "") {
+        window.alert("Please fill in the price of the Book");
     }
     else if(data[5] === "") {
         window.alert("Please fill the description with the condition of the book");

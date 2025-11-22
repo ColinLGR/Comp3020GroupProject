@@ -242,7 +242,7 @@ function updateResults() {
             itemMarker.textContent = item[1][0];
             itemMarker.style.left = (Math.random() * 50) + 25 + "%";
             itemMarker.style.top = (Math.random() * 50) + 25 + "%";
-            itemMarker.title = `${item[1]}\nPrice: $${item[3]}\nSeller: ${item[4]}`;
+            itemMarker.title = `Seller: ${item[4]}\nAddress: ${item[6]}`;
             itemMarker.addEventListener("click", () => {
                 document.getElementById("mapHeader").textContent = item[4];
                 document.getElementById("mapLocation").textContent = item[6];
@@ -256,6 +256,43 @@ function updateResults() {
 function loadPostPageData() {
     const data = JSON.parse(sessionStorage.getItem("data"));
     database.push(data);
+    
+    const choosenFilters = document.getElementById("choosenFilters");
+
+    const opt = document.createElement("button");
+    opt.textContent = data[2];
+
+    opt.addEventListener("click", () => {
+        if(choosenFilters.contains(opt)) {
+            filterWindow.appendChild(opt);
+            opt.style.margin = "";
+            activeFilters.pop(opt.textContent);
+        } else {
+            choosenFilters.appendChild(opt);
+            opt.style.margin = "1rem 0.5rem";
+            activeFilters.push(opt.textContent);
+        }
+        if(choosenFilters.childElementCount === 0) {
+            choosenFilters.style.marginBottom = "0rem";
+        } else if(choosenFilters.childElementCount === 1) {
+            choosenFilters.style.marginBottom = "1rem";
+        }
+        updateResults();
+    });
+
+    filterWindow.appendChild(opt);
+    const itemMarker = document.createElement("div");
+    itemMarker.className = "map-marker item-marker";
+    itemMarker.textContent = data[1][0];
+    itemMarker.style.left = (Math.random() * 50) + 25 + "%";
+    itemMarker.style.top = (Math.random() * 50) + 25 + "%";
+    itemMarker.title = `Seller: ${data[4]}\nAddress: ${data[6]}`;
+    itemMarker.addEventListener("click", () => {
+        document.getElementById("mapHeader").textContent = data[4];
+        document.getElementById("mapLocation").textContent = data[6];
+    });
+    map.appendChild(itemMarker);
+    data.push(itemMarker);
     searchedData(data);
 }
 
