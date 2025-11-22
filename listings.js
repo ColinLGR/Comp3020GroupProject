@@ -184,7 +184,7 @@ function loadListingData() {
 
   titleElement.textContent = title;
   authorElement.textContent = `Subject: ${category}`;
-  priceElement.textContent = `$${price.toFixed(2)}`;
+  priceElement.textContent = `$${price}`;
   sellerElement.textContent = `Seller: ${seller}`;
   descriptionElement.textContent = description;
 

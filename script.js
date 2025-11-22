@@ -22,8 +22,7 @@ const database =
     [["https://m.media-amazon.com/images/I/81+xORCwIUL._AC_UF1000,1000_QL80_.jpg"], "John A. Beachy: Abstract Algebra", "Math", 40.00,"Minnette F","Texbook for MATH3320, mint condition.","404 Birch Blvd, Winnipeg"],
     [["https://m.media-amazon.com/images/I/81Od7SspQCL.jpg"], "Howard Anton: Elementary Linear Algebra", "Math", 40.00,"Jeff N","Texbook for MATH1300, used condition.","505 Spruce St, Winnipeg"],
     // Biology book
-    [[
-        "https://www.pearson.com/store//pmccommercewebservices/v2/medias/size-W370-A1030-00-19-77-A103000197789-A103000197789-Lrg.jpg?context=bWFzdGVyfGltYWdlc3wxNTg3NjN8aW1hZ2UvanBlZ3xzeXMtbWFzdGVyL2ltYWdlcy9oM2IvaDVmLzE0NTU4NzU4MjczMDU0L3NpemVfVzM3MF8vQTEwMzAvMDAvMTkvNzcvQTEwMzAwMDE5Nzc4OS9BMTAzMDAwMDE5Nzc4OV9McmcuanBnfDY1OTQ3OWUwNWQ2YTRhNjJmMWYzNGZkMTkzZmExYThlM2I0MGViYTRjNDkyNDljYzcyYzU2ZWI3YTM0Njg5NGRj"
+    [["https://www.pearson.com/store//pmccommercewebservices/v2/medias/size-W370-A1030-00-19-77-A103000197789-A103000197789-Lrg.jpg?context=bWFzdGVyfGltYWdlc3wxNTg3NjN8aW1hZ2UvanBlZ3xzeXMtbWFzdGVyL2ltYWdlcy9oM2IvaDVmLzE0NTU4NzU4MjczMDU0L3NpemVfVzM3MF8vQTEwMzAvMDAvMTkvNzcvQTEwMzAwMDE5Nzc4OS9BMTAzMDAwMDE5Nzc4OV9McmcuanBnfDY1OTQ3OWUwNWQ2YTRhNjJmMWYzNGZkMTkzZmExYThlM2I0MGViYTRjNDkyNDljYzcyYzU2ZWI3YTM0Njg5NGRj"
     ], "Marieb Human Anatomy & Physiology", "Biology", 40.00,"Franklin B","Textbook for BIOL1410, great condition, no rips.","606 Main St, Winnipeg"],
     [["https://m.media-amazon.com/images/I/81N9ElHj+QL._AC_UF1000,1000_QL80_.jpg"], "Ray Evert: Raven Biology of Plants", "Biology", 100.00,"Chloe B","Hardcover texbook for BIOL2240, perfect condition.","707 Elm St, Winnipeg"],
     // Russian book
@@ -254,3 +253,10 @@ function updateResults() {
     });
 }
 
+function loadPostPageData() {
+    const data = JSON.parse(sessionStorage.getItem("data"));
+    database.push(data);
+    searchedData(data);
+}
+
+loadPostPageData();
